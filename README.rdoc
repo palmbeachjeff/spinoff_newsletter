@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ * [x] Come up with Idea for functionality
+ * [x] Write out User Stories and make mock-up of pages
+ * [x] Come up with all the technologies necessary to accomplish project
+ 
 
-Things you may want to cover:
+Ensure that following functionality is completed:
+ * [ ] User can login
+ * [ ] User can view all recent spinoffs if a member
+ * [ ] User can click on ticker/stock symbol and see Chart/Quote for that ticker/stock on separate internal page
+ * [ ] User can logout
+ * [ ] Site is designed
+ * [ ] Form for users to subscribe
+ * [ ] Once form is submitted for payment, .pdf of spinoffs is sent to user
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Additional/Bonus features:
+ * [ ] Performance for each spinoff is added to page of spinoffs once User signs in
+ * [ ] User's can sort by performance, date, and ticker symbol of spinoff
