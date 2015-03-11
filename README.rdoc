@@ -6,14 +6,14 @@
  
 
 Ensure that following functionality is completed:
- * [ ] User can login
- * [ ] User can view all recent spinoffs if a member
- * [ ] User can click on ticker/stock symbol and see Chart/Quote for that ticker/stock on separate internal page
- * [ ] User can logout
- * [ ] Site is designed
- * [ ] Form for users to subscribe
- * [ ] Once form is submitted for payment, .pdf of spinoffs is sent to user
+ *[ ] User can login
+ *[ ] User can view all recent spinoffs if a member
+ *[ ] User can click on ticker/stock symbol and see Chart/Quote for that ticker/stock on separate internal page
+ *[ ] User can logout
+ *[ ] Site is designed
+ *[ ] Form for users to subscribe
+ *[ ] Once form is submitted for payment, .pdf of spinoffs is sent to user
 
 Additional/Bonus features:
- * [ ] Performance for each spinoff is added to page of spinoffs once User signs in
- * [ ] User's can sort by performance, date, and ticker symbol of spinoff
+ *[ ] Performance for each spinoff is added to page of spinoffs once User signs in
+ *[ ] User's can sort by performance, date, and ticker symbol of spinoff
