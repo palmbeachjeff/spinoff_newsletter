@@ -1,0 +1,2 @@
+class InteractivechartsController < ApplicationController
+end
