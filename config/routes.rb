@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  get 'landings/index'
   
+
+
+  get 'landings/index'
+
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   resources :subscribe
+  resources :interactivecharts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
