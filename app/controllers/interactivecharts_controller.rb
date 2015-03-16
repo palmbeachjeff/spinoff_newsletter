@@ -1,5 +1,3 @@
 class InteractivechartsController < ApplicationController
  
-
-
 end

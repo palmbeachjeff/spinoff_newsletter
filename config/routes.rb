@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
 
 
+  resources :spinoffs
+
   get 'landings/index'
 
 
