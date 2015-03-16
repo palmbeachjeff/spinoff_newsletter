@@ -19,7 +19,7 @@ class SubscribeController < ApplicationController
       current_user.stripeid = customer.id
       current_user.save
 
-      redirect_to landings_index_path, :notice => "Your subscription was setup! You may now access the Spin-off subscription list!"
+      redirect_to spinoffs_index_path, :notice => "Your subscription was setup! You may now access the Spin-off subscription list!"
   end
 
 end
