@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
 
 
-  resources :spinoffs
+
 
   get 'landings/index'
 
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  resources :spinoffs
   resources :subscribe
   resources :interactivecharts
   # The priority is based upon order of creation: first created -> highest priority.
