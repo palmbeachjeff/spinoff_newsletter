@@ -1,10 +1,11 @@
 <%= render partial: "elements/navbar" %>
 <%= bootstrap_flash %>
 <div class="jumbotron">
-  <h1 style="text-align: center;">Welcome to Spin!</h1>
+  <h1 style="text-align: center; color: white;">Welcome to Spin!</h1>
 </div>
 
 <div class="container">
+  <%= will_paginate @spinoffs %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -27,4 +28,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= will_paginate @spinoffs %>
 </div>

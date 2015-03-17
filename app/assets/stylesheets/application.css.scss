@@ -283,13 +283,13 @@ body {
 }
 
 a {
-  color: #2fa0ec;
+  color: #fff;
   text-decoration: none;
   outline: none;
 }
 
 a:hover, a:focus {
-  color: #74777b;
+  color: #ddd;
 }
 
 .container {
@@ -310,9 +310,10 @@ a:hover, a:focus {
 }
 
 .content p {
-  margin: 1em 0;
-  padding: 5em 0 0 0;
-  font-size: 0.65em;
+/*  margin: 1em 0;*/
+  padding: 1em 0 0 0;
+  font-size: 1.2em;
+  font-color: white;
 }
 
 .bgcolor-1 { background: #f0efee; }
