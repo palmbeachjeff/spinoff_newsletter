@@ -8,10 +8,10 @@
 </ul>
 
 <%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
+<% javascript_tag 'classie.js' %>
 
 <div class="container">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>                                                                                                                                     <section class="content bgcolor-5">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>                                                                                                                                             <section class="content bgcolor-5">
       <span class="input input--minoru">
         <%= f.text_field :login, class: "input__field input__field--yoko", html: {spellcheck: "false"} %>
         <%= f.label :login, "Email", class: "input__label input__label--yoko" %>
@@ -22,14 +22,10 @@
         <%= f.label :password, class: "input__label input__label--yoko" %>
         </label>
       </span>
-      <span class="input input--minoru">
-        <%= f.submit "Login", class: "btn btn-block" %>
-        <p><%= render "devise/shared/links" %></p>
-        <% if devise_mapping.rememberable? -%>
-          <p><%= f.label :remember_me, "Remember Me", class: "control-label col-md-4 form_text" %>
-          <%= f.check_box :remember_me %></p>
-        <% end -%>
-      </span>
+        <div class="login_button">
+          <%= f.submit "Login", class: "button button--ujarak button--border-thick button--text-upper button--size-s button--inverted button--text-thick" %>
+        </div>
+        <p class="links"><%= render "devise/shared/links" %></p>
     </section>
   <% end %>
 </div>

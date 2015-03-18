@@ -1,12 +1,22 @@
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
-<div class="jumbotron">
-  <h1 style="text-align: center;">Welcome to Spin!</h1>
-</div>
-  
-  <% if current_user.subscribed %> 
 
-<div class="container">
+<% if current_user.subscribed %>
+<header>
+  <section class="hero">
+    <div class="texture-overlay"></div>
+    <div class="container">
+      <%= render partial: "elements/navbar" %>
+      <%= bootstrap_flash %>
+      <div class="row hero-content">
+        <div class="col-md-12">
+          <h1 class="animated fadeInDown">Welcome back to The Spinoff News Letter</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<div class="bg_dark">
+  <%= will_paginate @spinoffs %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -29,9 +39,185 @@
       <% end %>
     </tbody>
   </table>
+  <%= will_paginate @spinoffs %>
 </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h1 class="footer-logo">
+        <img src="img/logo-blue.png" alt="Footer Logo Blue">
+        </h1>
+        <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+      </div>
+      <div class="col-md-4">
+        <ul class="footer-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">FAQ</a></li>
+          <li><a href="#screenshots">Contact</a></li>
+        </ul>
+      </div>
 
-<%else%>
-<%= button_to "Subscribe", new_subscribe_path, :class => "button", :method => :get  %>
+    </div>
+  </div>
+</footer>
+<div class="overlay overlay-boxify">
+  <nav>
+    <ul>
+      <li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
+      <li><a href="#features"><i class="fa fa-flash"></i>FAQ</a></li>
+      <li><a href="#screenshots"><i class="fa fa-desktop"></i>Contact</a></li>
+    </ul>
+  </nav>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/min/toucheffects-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/retina.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/min/scripts-min.js"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<% javascript_tag 'charts.js' %>
+<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
 
+<% else %>
+<header>
+      <section class="hero">
+        <div class="texture-overlay"></div>
+        <div class="container">
+          <%= render partial: "elements/navbar" %>
+          <%= bootstrap_flash %>
+          <div class="row hero-content">
+            <div class="col-md-12">
+              <h1 class="animated fadeInDown">We provide a newsletter of recent and upcoming spinoffs for valued investors of all kinds</h1>
+              <%= button_to "Subscribe", new_subscribe_path, :class => "use-btn animated fadeInUp", :method => :get  %> 
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="content_one">
+      <div class='row'>
+        <div class='col-md-6'>
+          <h1 class="text_one">DEFINITION of Spinoff</h1>
+          <p class="text_one">The creation of an independent company through the sale or distribution of new shares of an existing business or division of a parent company. A spinoff is a type of divestiture. Businesses wishing to streamline their operations often sell less productive or unrelated subsidiary businesses as spinoffs. For example, a company might spin off one of its mature business units that is experiencing little or no growth so it can focus on a product or service with higher growth prospects. The spun-off companies are expected to be worth more as independent entities than as parts of a larger business.</p>
+        </div>
+        <div class='col-md-6'>
+          <%= image_tag('Stock_Market_background.jpg', class: 'img_one') %>
+        </div>
+      </div>
+        <!-- <div id="container" style="height: 400px; min-width: 600px"></div>   
+        <script src="http://code.highcharts.com/stock/highstock.js"></script>   
+        <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
+        <script type="text/javascript" src="http://www.highcharts.com/samples/data/three-series-1000-points.js"></script>​  
+        <script src="../Rails_projects/spinoffnewsletter/app/assets/javascripts/charts.js"></script> -->
+    </section>
+    
+    <section class="showcase">
+      <div class="showcase-wrap">
+        <div class="texture-overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="device wp3">
+                <div class="device-content">
+                  <div class="showcase-slider">
+                    <ul class="slides" id="showcaseSlider">
+                      <li>
+                        <img src="img/screen1.jpg" alt="Device Content Image">
+                      </li>
+                      <li>
+                        <img src="img/screen2.jpg" alt="Device Content Image">
+                      </li>
+                      <li>
+                        <img src="img/screen3.jpg" alt="Device Content Image">
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h1>Checkout our Spinoffs</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc."</p>
+              <%= link_to "FAQ", spinoffs_path, class: "download-btn" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots-intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text_two">Let us keep you up to date</h1>
+            <p class="text_two">Spinoffs are a common occurrence; there are typically about 50 per year in the United States. You may be familiar with Expedia’s spinoff of TripAdvisor in 2011, United Online’s spinoff of FTD companies in 2013 or Sears Holding Corporation’s spinoff of Sears Canada in 2012, to name just a few examples.</p>
+            <p class="text_two">A corporation creates a spinoff by distributing 100% of its ownership interest in that business unit as a stock dividend to existing shareholders. It can also offer its existing shareholders a discount to exchange their shares in the parent for shares of the spinoff. For example, an investor could exchange $100 of the parent’s stock for $110 of the spinoff’s stock. Spinoffs tend to increase returns for shareholders because the newly independent companies can better focus on their specific products or services. Both the parent and the spinoff tend to perform better as a result of the spinoff transaction, with the spinoff being the greater performer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h1 class="footer-logo">
+            <img src="img/logo-blue.png" alt="Footer Logo Blue">
+            </h1>
+            <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+          </div>
+          <div class="col-md-4">
+            <ul class="footer-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#features">FAQ</a></li>
+              <li><a href="#screenshots">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <div class="overlay overlay-boxify">
+      <nav>
+        <ul>
+          <li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
+          <li><a href="#features"><i class="fa fa-flash"></i>FAQ</a></li>
+          <li><a href="#screenshots"><i class="fa fa-desktop"></i>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/min/toucheffects-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/flickity.pkgd.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/retina.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/min/scripts-min.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <% javascript_tag 'charts.js' %>
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
 <% end %>
