@@ -9,7 +9,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'httparty'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -58,7 +58,14 @@ gem 'binding_of_caller'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+
 group :development do
+  gem 'sqlite3'
   gem 'better_errors'
   gem 'awesome_print'
   gem 'pry-rails'
