@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'landings/index'
   get 'spinoffs/index'
+  get 'interactivecharts/index'
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,16 +19,20 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landings#index'
+  root 'spinoffs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+      
+
 
   # Example resource route with options:
   #   resources :products do

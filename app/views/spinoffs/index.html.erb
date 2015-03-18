@@ -3,6 +3,8 @@
 <div class="jumbotron">
   <h1 style="text-align: center;">Welcome to Spin!</h1>
 </div>
+  
+  <% if current_user.subscribed %> 
 
 <div class="container">
   <table class="table table-striped">
@@ -28,3 +30,8 @@
     </tbody>
   </table>
 </div>
+
+<%else%>
+<%= button_to "Subscribe", new_subscribe_path, :class => "button", :method => :get  %>
+
+<% end %>
