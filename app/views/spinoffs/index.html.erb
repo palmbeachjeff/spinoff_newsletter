@@ -1,3 +1,5 @@
+<% if current_user.subscribed %>
+
 <%= render partial: "elements/navbar" %>
 <%= bootstrap_flash %>
 <div class="jumbotron">
@@ -30,3 +32,213 @@
   </table>
   <%= will_paginate @spinoffs %>
 </div>
+
+<% else %>
+<header>
+      <section class="hero">
+        <div class="texture-overlay"></div>
+        <div class="container">
+          <%= render partial: "elements/navbar" %>
+          <%= bootstrap_flash %>
+          <div class="row hero-content">
+            <div class="col-md-12">
+              <h1 class="animated fadeInDown">We provide a newsletter of recent and upcoming spinoffs for valued investors of all kinds</h1>
+              <%= button_to "Subscribe", new_subscribe_path, :class => "use-btn animated fadeInUp", :method => :get  %> 
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="content_one">
+      <div class="container">
+         <!--  <div id="container" style="height: 400px; min-width: 600px"></div>  --> 
+         <!-- <script src="http://code.highcharts.com/stock/highstock.js"></script>  --> 
+         <!-- <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
+              <script type="text/javascript" src="http://www.highcharts.com/samples/data/three-series-1000-points.js"></script>​  
+              <script src="../Rails_projects/spinoffnewsletter/app/assets/javascripts/charts.js"></script> -->
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1><a href="http://www.youtube.com/embed/9No-FiEInLA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> This is just a test to see if some text will show up</a></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features-intro">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 nopadding features-intro-img">
+            <div class="features-bg">
+              <div class="texture-overlay"></div>
+              <div class="features-img wp1">
+                <img src="img/html5-logo.png" alt="HTML5 Logo">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 nopadding">
+            <div class="features-slider">
+                <ul class="slides" id="featuresSlider">
+                  <li>
+                    <h1>The Spinoff News Letter</h1>
+                    <p>On the first of every month (or upon their joining the site), we email our members an updated list of all recent spinoffs as well as upcoming spin-offs.  We cover all domestic spin-offs and give no recommendation of any kind, we just want to provide investors a resource that is clean and easy to use to save them time and money.</p>
+                  </li>
+                  <li>
+                    <h1>How often is Spin-off Newsletter sent out?</h1>
+                    <p>Monthly on the first of every month. Upon subscribing, you will receive the latest month’s subscription and can log in to the site to view all recent and upcoming spinoffs as well. Can I have the most recent issue as a sample? We give all of our customers a 30 day free trial to ensure that you are happy with our product and services we provide to save our customers time and money.</p>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features-list" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="col-md-4 feature-1 wp2">
+              <div class="feature-icon">
+                <i class="fa fa-desktop"></i>
+              </div>
+              <div class="feature-content">
+                <h1>Responsive</h1>
+                <p>Built using HTML5/CSS3 and jQuery, and built using one of the world's most powerful CSS frameworks available, Bootstrap.</p>
+                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-4 feature-2 wp2 delay-05s">
+              <div class="feature-icon">
+                <i class="fa fa-flash"></i>
+              </div>
+              <div class="feature-content">
+                <h1>Multi-Purpose</h1>
+                <p>Perfect if you run your own start-up, product or service. Boxify can showcase your business converting your visits to income.</p>
+                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-4 feature-3 wp2 delay-1s">
+              <div class="feature-icon">
+                <i class="fa fa-heart"></i>
+              </div>
+              <div class="feature-content">
+                <h1>Absolutely Free</h1>
+                <p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply <a href="http://peterfinlan.com/">buy me a beer</a>. </p>
+                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="showcase">
+      <div class="showcase-wrap">
+        <div class="texture-overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="device wp3">
+                <div class="device-content">
+                  <div class="showcase-slider">
+                    <ul class="slides" id="showcaseSlider">
+                      <li>
+                        <img src="img/screen1.jpg" alt="Device Content Image">
+                      </li>
+                      <li>
+                        <img src="img/screen2.jpg" alt="Device Content Image">
+                      </li>
+                      <li>
+                        <img src="img/screen3.jpg" alt="Device Content Image">
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h1>Checkout our Spinoffs</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+              <blockquote class="team-quote">
+                <div class="avatar"><img src="img/avatar.png" alt="User Avatar"></div>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc."</p>
+              </blockquote>
+              <%= link_to "FAQ", spinoffs_path, class: "download-btn" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots-intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Let us keep you up to date</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            <p><a href="#screenshots" class="arrow-btn">See the screenshots! <i class="fa fa-long-arrow-right"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="download" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center wp4">
+            <h1>Seen Enough?</h1>
+            <a href="http://tympanus.net/codrops/?p=22554" class="download-btn">Download! <i class="fa fa-download"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <h1 class="footer-logo">
+            <img src="img/logo-blue.png" alt="Footer Logo Blue">
+            </h1>
+            <p>© Spinoff News Letter - Designed &amp; Developed by <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+          </div>
+          <div class="col-md-4">
+            <ul class="footer-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#features">FAQ</a></li>
+              <li><a href="#screenshots">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <div class="overlay overlay-boxify">
+      <nav>
+        <ul>
+          <li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
+          <li><a href="#features"><i class="fa fa-flash"></i>FAQ</a></li>
+          <li><a href="#screenshots"><i class="fa fa-desktop"></i>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/min/toucheffects-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/flickity.pkgd.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/retina.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/min/scripts-min.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+
+<% end %>
