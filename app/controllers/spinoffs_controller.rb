@@ -8,5 +8,8 @@ class SpinoffsController < ApplicationController
   def show
     @spinoff = Spinoff.find(params[:id])
   end
+
+  
+
 end
 
