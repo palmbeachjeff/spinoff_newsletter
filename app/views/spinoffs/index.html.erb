@@ -1,10 +1,18 @@
 <% if current_user.subscribed %>
-
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
-<div class="jumbotron">
-  <h1 style="text-align: center; color: white;">Welcome to Spin!</h1>
-</div>
+<header>
+  <section class="hero">
+    <div class="texture-overlay"></div>
+    <div class="container">
+      <%= render partial: "elements/navbar" %>
+      <%= bootstrap_flash %>
+      <div class="row hero-content">
+        <div class="col-md-12">
+          <h1 class="animated fadeInDown">Welcome back to The Spinoff News Letter</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
 
 <div class="container">
   <%= will_paginate @spinoffs %>
@@ -32,7 +40,7 @@
   </table>
   <%= will_paginate @spinoffs %>
 </div>
-
+<% javascript_tag 'charts.js' %>
 <% else %>
 <header>
       <section class="hero">
@@ -50,87 +58,22 @@
       </section>
     </header>
     <section class="content_one">
-      <div class="container">
-         <!--  <div id="container" style="height: 400px; min-width: 600px"></div>  --> 
-         <!-- <script src="http://code.highcharts.com/stock/highstock.js"></script>  --> 
-         <!-- <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
-              <script type="text/javascript" src="http://www.highcharts.com/samples/data/three-series-1000-points.js"></script>​  
-              <script src="../Rails_projects/spinoffnewsletter/app/assets/javascripts/charts.js"></script> -->
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1><a href="http://www.youtube.com/embed/9No-FiEInLA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> This is just a test to see if some text will show up</a></h1>
-          </div>
+      <div class='row'>
+        <div class='col-md-6'>
+          <h1 class="text_one">DEFINITION of Spinoff</h1>
+          <p class="text_one">The creation of an independent company through the sale or distribution of new shares of an existing business or division of a parent company. A spinoff is a type of divestiture. Businesses wishing to streamline their operations often sell less productive or unrelated subsidiary businesses as spinoffs. For example, a company might spin off one of its mature business units that is experiencing little or no growth so it can focus on a product or service with higher growth prospects. The spun-off companies are expected to be worth more as independent entities than as parts of a larger business.</p>
+        </div>
+        <div class='col-md-6'>
+          <%= image_tag('Stock_Market_background.jpg', class: 'img_one') %>
         </div>
       </div>
+        <!-- <div id="container" style="height: 400px; min-width: 600px"></div>   
+        <script src="http://code.highcharts.com/stock/highstock.js"></script>   
+        <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
+        <script type="text/javascript" src="http://www.highcharts.com/samples/data/three-series-1000-points.js"></script>​  
+        <script src="../Rails_projects/spinoffnewsletter/app/assets/javascripts/charts.js"></script> -->
     </section>
-    <section class="features-intro">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-6 nopadding features-intro-img">
-            <div class="features-bg">
-              <div class="texture-overlay"></div>
-              <div class="features-img wp1">
-                <img src="img/html5-logo.png" alt="HTML5 Logo">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 nopadding">
-            <div class="features-slider">
-                <ul class="slides" id="featuresSlider">
-                  <li>
-                    <h1>The Spinoff News Letter</h1>
-                    <p>On the first of every month (or upon their joining the site), we email our members an updated list of all recent spinoffs as well as upcoming spin-offs.  We cover all domestic spin-offs and give no recommendation of any kind, we just want to provide investors a resource that is clean and easy to use to save them time and money.</p>
-                  </li>
-                  <li>
-                    <h1>How often is Spin-off Newsletter sent out?</h1>
-                    <p>Monthly on the first of every month. Upon subscribing, you will receive the latest month’s subscription and can log in to the site to view all recent and upcoming spinoffs as well. Can I have the most recent issue as a sample? We give all of our customers a 30 day free trial to ensure that you are happy with our product and services we provide to save our customers time and money.</p>
-                  </li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="features-list" id="features">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="col-md-4 feature-1 wp2">
-              <div class="feature-icon">
-                <i class="fa fa-desktop"></i>
-              </div>
-              <div class="feature-content">
-                <h1>Responsive</h1>
-                <p>Built using HTML5/CSS3 and jQuery, and built using one of the world's most powerful CSS frameworks available, Bootstrap.</p>
-                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4 feature-2 wp2 delay-05s">
-              <div class="feature-icon">
-                <i class="fa fa-flash"></i>
-              </div>
-              <div class="feature-content">
-                <h1>Multi-Purpose</h1>
-                <p>Perfect if you run your own start-up, product or service. Boxify can showcase your business converting your visits to income.</p>
-                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4 feature-3 wp2 delay-1s">
-              <div class="feature-icon">
-                <i class="fa fa-heart"></i>
-              </div>
-              <div class="feature-content">
-                <h1>Absolutely Free</h1>
-                <p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply <a href="http://peterfinlan.com/">buy me a beer</a>. </p>
-                <a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <section class="showcase">
       <div class="showcase-wrap">
         <div class="texture-overlay"></div>
@@ -158,10 +101,7 @@
             <div class="col-md-6">
               <h1>Checkout our Spinoffs</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-              <blockquote class="team-quote">
-                <div class="avatar"><img src="img/avatar.png" alt="User Avatar"></div>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc."</p>
-              </blockquote>
               <%= link_to "FAQ", spinoffs_path, class: "download-btn" %>
             </div>
           </div>
@@ -173,24 +113,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>Let us keep you up to date</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-            <p><a href="#screenshots" class="arrow-btn">See the screenshots! <i class="fa fa-long-arrow-right"></i></a></p>
+            <h1 class="text_two">Let us keep you up to date</h1>
+            <p class="text_two">Spinoffs are a common occurrence; there are typically about 50 per year in the United States. You may be familiar with Expedia’s spinoff of TripAdvisor in 2011, United Online’s spinoff of FTD companies in 2013 or Sears Holding Corporation’s spinoff of Sears Canada in 2012, to name just a few examples.</p>
+            <p class="text_two">A corporation creates a spinoff by distributing 100% of its ownership interest in that business unit as a stock dividend to existing shareholders. It can also offer its existing shareholders a discount to exchange their shares in the parent for shares of the spinoff. For example, an investor could exchange $100 of the parent’s stock for $110 of the spinoff’s stock. Spinoffs tend to increase returns for shareholders because the newly independent companies can better focus on their specific products or services. Both the parent and the spinoff tend to perform better as a result of the spinoff transaction, with the spinoff being the greater performer.</p>
           </div>
         </div>
       </div>
     </section>
     
-    <section class="download" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center wp4">
-            <h1>Seen Enough?</h1>
-            <a href="http://tympanus.net/codrops/?p=22554" class="download-btn">Download! <i class="fa fa-download"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
     <footer>
       <div class="container">
         <div class="row">
@@ -198,7 +128,7 @@
             <h1 class="footer-logo">
             <img src="img/logo-blue.png" alt="Footer Logo Blue">
             </h1>
-            <p>© Spinoff News Letter - Designed &amp; Developed by <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+            <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
           </div>
           <div class="col-md-4">
             <ul class="footer-nav">
@@ -231,6 +161,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/min/scripts-min.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <% javascript_tag 'charts.js' %>
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -239,6 +170,4 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-
-
 <% end %>
