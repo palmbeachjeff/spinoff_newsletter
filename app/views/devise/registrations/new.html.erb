@@ -1,52 +1,48 @@
+<ul class="cb-slideshow">
+  <li><span>Image 01</span><div><h3></h3></div></li>
+  <li><span>Image 02</span><div><h3></h3></div></li>
+  <li><span>Image 03</span><div><h3></h3></div></li>
+  <li><span>Image 04</span><div><h3></h3></div></li>
+  <li><span>Image 05</span><div><h3></h3></div></li>
+  <li><span>Image 06</span><div><h3></h3></div></li>
+</ul>
+
 <%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %><div class="page-header">
-  <h1><%=t ".title", default: "Sign Up" %></h1>
+<%= bootstrap_flash %>
+<div class="container">
+
+    <h1 style="font-size: 3.2em; color: white; padding: none; margin: none;"><%=t ".title", default: "Sign Up" %></h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
+    <%= devise_error_messages! %>
+
+  <section class="content bgcolor-5">
+      <span class="input input--minoru">    
+        <%= f.text_field :username, class: "input__field input__field--yoko", html: {spellcheck: "false"} %>
+        <%= f.label :username, class: "input__label input__label--yoko" %>
+      </span>    
+      <span class="input input--minoru">
+        <%= f.email_field :email, class: "input__field input__field--yoko", html: {spellcheck: "false"} %>
+        <%= f.label :email, class: "input__label input__label--yoko" %>
+      </span>
+      <span class="input input--minoru">
+        <%= f.password_field :password, class: "input__field input__field--yoko", html: {autocomplete: "off"} %>
+        <%= f.label :password, class: "input__label input__label--yoko" %>
+      </span> 
+      <span class="input input--minoru">
+        <%= f.password_field :password_confirmation, class: "input__field input__field--yoko", html: {autocomplete: "off"} %>
+        <%= f.label :password_confirmation, "Password Confirmation", class: "input__label input__label--yoko" %>
+      </span> 
+      <div class="login_button">
+        <%= f.submit "Sign Up", class: "button button--ujarak button--border-thick button--text-upper button--size-s button--inverted button--text-thick" %>
+      </div>
+
+      <p class="links"><%= render "devise/shared/links" %></p>
+    </section>
+  <% end %>
 </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
-  <%= devise_error_messages! %>
 
-  
-  <div class="form-group">
-    <%= f.label :username, class: "control-label col-md-4" %>
-    <div class="col-md-8">
-      <%= f.text_field :username, class: "text-field form-control", html: {spellcheck: "false"} %>
-    </div>
-  </div>
-  
 
-  <div class="form-group">
-    <%= f.label :email, class: "control-label col-md-4" %>
-    <div class="col-md-8">
-      <%= f.email_field :email, class: "text-field form-control", html: {spellcheck: "false"} %>
-    </div>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :password, class: "control-label col-md-4" %>
-    <div class="col-md-8">
-      <%= f.password_field :password, class: "text-field form-control", html: {autocomplete: "off"} %>
-    </div>
-  </div>
-     
-  <div class="form-group">
-    <%= f.label :password_confirmation, "Password Confirmation", class: "control-label col-md-4" %>
-    <div class="col-md-8">
-      <%= f.password_field :password_confirmation, class: "text-field form-control", html: {autocomplete: "off"} %>
-    </div>
-  </div>
-     
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-8">
-      <%= f.submit "Sign Up", class: "btn btn-primary" %>
-    </div>
-  </div>
 
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-8">
-      <%= render "devise/shared/links" %>
-    </div>
-  </div>
-
-<% end %>
 
