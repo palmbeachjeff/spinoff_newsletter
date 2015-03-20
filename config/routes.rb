@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'spinoffs/index'
   get 'interactivecharts/index'
   get 'faq/show'
+  
 
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

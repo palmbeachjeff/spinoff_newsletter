@@ -9,6 +9,8 @@ class SpinoffsController < ApplicationController
     @spinoff = Spinoff.find(params[:id])
   end
 
+  def admin
+  end
   
 
 end
