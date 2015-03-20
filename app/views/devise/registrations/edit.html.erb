@@ -1,26 +1,43 @@
+<ul class="cb-slideshow">
+  <li><span>Image 01</span><div><h3></h3></div></li>
+  <li><span>Image 02</span><div><h3></h3></div></li>
+  <li><span>Image 03</span><div><h3></h3></div></li>
+  <li><span>Image 04</span><div><h3></h3></div></li>
+  <li><span>Image 05</span><div><h3></h3></div></li>
+  <li><span>Image 06</span><div><h3></h3></div></li>
+</ul>
+
 <%= render partial: "elements/navbar" %>
 <%= bootstrap_flash %>
 <div class="container"> 
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h1 style="font-size: 3.2em; color: white; padding: none; margin: none;">Edit <%= resource_name.to_s.humanize %></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
+  
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
+  <section class="content bgcolor-5">
+    <span class="input input--minoru">
+      <%= f.input :email, class: "input__field input__field--yoko", required: true, autofocus: true %>
+    </span>
+    <span class="input input--minoru">
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p style="color: white;">Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+    </span>
+    <span class="input input--minoru">
+      <%= f.input :password, class: "input__field input__field--yoko", autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    </span>
+    <span class="input input--minoru">
+      <%= f.input :password_confirmation, class: "input__field input__field--yoko", required: false %>
+    </span>
+    <span class="input input--minoru">
+      <%= f.input :current_password, class: "input__field input__field--yoko", hint: "we need your current password to confirm your changes", required: true %>
+    </span>
+    <div class="login_button">
+      <%= f.button :submit, "Update", class: "button button--ujarak button--border-thick button--text-upper button--size-s button--inverted button--text-thick" %>
+    </div>
+  <section class="content bgcolor-5">
 <% end %>
 
 <h3>Cancel my account</h3>
