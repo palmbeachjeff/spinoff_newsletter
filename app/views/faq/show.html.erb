@@ -1,52 +1,66 @@
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
-<div class="container">
+<div class="wrap_faq">
+  <%= render partial: "elements/navbar" %>
+  <%= bootstrap_flash %>
+  <div class="container_faq">
+    <h1 class="header_faq">FAQ's</h1>
 
+    <p class="question">What information is contained in Spin-off Newsletter.com?</p>
 
-<h1> FAQ's </h1>
-<body>
+    <p class="answer">
+      We provide a newsletter of recent and upcoming spin-off for value investors of all kinds. On the first of every month (or upon their joining the site), we email our members an updated list of all recent spinoffs as well as upcoming spin-offs.  We cover all domestic spin-offs and give no recommendation of any kind, we just want to provide investors a resource that is clean and easy to use to save them time and money. 
+    </p> 
 
-<p> What information is contained in Spin-off Newsletter.com? </br>
+    <p class="question">How much does it cost?</p>
 
-We provide a newsletter of recent and upcoming spin-off for value investors of all kinds. On the first of every month (or upon their joining the site), we email our members an updated list of all recent spinoffs as well as upcoming spin-offs.  We cover all domestic spin-offs and give no recommendation of any kind, we just want to provide investors a resource that is clean and easy to use to save them time and money. 
+    <p class="answer">$24.99 per month "<%= link_to 'Subscribe Here', new_subscribe_path, class: 'subscribe' %>"</p>
 
-</p> 
-</br>
+    <p class="question">How often is Spin-off Newsletter sent out?</p>
 
-<p> How much does it cost? </br>
+    <p class="answer">
+      Monthly on the first of every month.  Upon subscribing, you will receive the latest month’s subscription and can log in to the site to view all recent and upcoming spinoffs as well. 
+    </p>
 
-$24.99 per month “Subscribe Here" 
+    <p class="question">Can I have the most recent issue as a sample?</p>
 
-</p>
-</br>
+    <p class="answer">
+      We give all of our customers a 30 day free trial to ensure that you are happy with our product and services we provide to save our customers time and money. 
+    </p>
 
+    <p class="question">How do I sign up?</p>
 
-<p> How often is Spin-off Newsletter sent out? </br>
-
-Monthly on the first of every month.  Upon subscribing, you will receive the latest month’s subscription and can log in to the site to view all recent and upcoming spinoffs as well. 
-
-</p>
-</br>
-
-
-
-<p> Can I have the most recent issue as a sample? </br>
-
-We give all of our customers a 30 day free trial to ensure that you are happy with our product and services we provide to save our customers time and money. 
-</p>
-</br>
-
-<p> How do I sign up?
-
-You can go to our “Subscribe Page” listed here to get access and become a member. 
-</p>
-</br>
- 
-
-</body>
-
-
+    <p class="answer">You can go to our "<%= link_to 'Subscribe Page', root_path, class: 'subscribe' %>" listed here to get access and become a member.</p> 
+    
+  </div>
 </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/min/toucheffects-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/retina.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/min/scripts-min.js"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<% javascript_tag 'charts.js' %>
+<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='//www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
 
 
 

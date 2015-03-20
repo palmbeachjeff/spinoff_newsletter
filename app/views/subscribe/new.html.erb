@@ -1,10 +1,11 @@
-<%= render partial: "elements/navbar" %>
-<%= bootstrap_flash %>
-<div class="container">
-  <%= form_tag subscribe_path(1), :method => :put do %>
+<div class="subscribe_wrap">
+  <%= render partial: "elements/navbar" %>
+  <%= bootstrap_flash %>
+  <%= form_tag subscribe_path(1), :method => :put do %>    
+    <div class="container full_screen">
     <article>
       <label class="amount">
-        <span>Amount: $24.99</span>
+        <span style="color: white; font-size: 2em; padding-bottom: 5px;">Amount: $24.99</span>
       </label>
     </article>
 
@@ -13,4 +14,14 @@
         data-description="A month's subscription"
         data-amount="2499"></script>
     <% end %>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
 </div>
