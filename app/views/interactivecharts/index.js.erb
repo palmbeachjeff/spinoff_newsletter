@@ -1,0 +1,29 @@
+<%= render partial: "elements/navbar" %>
+<%= bootstrap_flash %>
+
+
+
+<div id="container" style="height: 400px; min-width: 600px"></div>  
+
+<div id="chartDemoContainer" style="height: 500px; min-width: 500px; margin-bottom: 30px; " data-highcharts-chart="0"></div>
+
+
+  
+    
+          
+          <script type="text/javascript" src="//code.highcharts.com/stock/highstock.js"></script>
+          <script type="text/javascript">
+        
+
+              $(function(){
+
+              var sym = $.url().param('symbol') || 'MSFT';
+              var dur = $.url().param('duration') || 3650;
+        
+              new Markit.InteractiveChartApi(sym, dur);
+               });
+          </script>
+
+         
+
+
