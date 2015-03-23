@@ -31,9 +31,9 @@
       <% @spinoffs.each do |spin| %>
         <tr>
           <td><%= spin.parent_name %></td>
-          <td><%= spin.parent_ticker %></td>   
+          <td><%= link_to spin.parent_ticker, controller: 'spinoffs', action: 'show', id: spin %></td>   
           <td><%= spin.spinoff_name %></td>
-          <td><%= spin.spinoff_ticker %></td>
+          <td><%= link_to spin.spinoff_ticker, controller: 'spinoffs', action: 'show', id: spin  %></td>
           <td><%= spin.spinoff_date %></td>
         </tr>
       <% end %>

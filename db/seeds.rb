@@ -17,3 +17,5 @@ CSV.foreach("#{csv_path}") do |row|
                     spinoff_ticker: row[4],
                     spinoff_date: row[5])
 end
+
+data = YahooFinance.quotes(tickers, [:change, :change_and_percent_change, :change_in_percent, :close, :last_trade_price, :last_trade_time, :name, :symbol, :trade_date, :ask, :bid, :last_trade_date], { raw: false } )
