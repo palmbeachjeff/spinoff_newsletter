@@ -34,68 +34,116 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 <div class="container">
-  <h1 style="padding-top: 2.3em; font-size: 3.4em;"><%= @data[0].name %></h1>
+  <h1 style="padding-top: 2.3em; padding-bottom: 0.4em; font-size: 3.4em;"><%= @spinoff.parent_name %></h1>
 </div>
 <div class="bg_dark">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><h3>Change</h3></th>
-        <th><h3>Change &amp; Percent Change</h3></th>
-        <th><h3>Change In Percent</h3></th>
-        <th><h3>Close</h3></th>
-        <th><h3>Last Trade Price</h3></th>
-        <th><h3>Last Trade Time</h3></th>
-        <th><h3>Ask</h3></th>
-        <th><h3>Bid</h3></th>
-        <th><h3>Last Trade Date</h3></th>
+        <th><h2>Change</h2></th>
+        <th><h2>Change In Percent</h2></th>
+        <th><h2>Close</h2></th>
+        <th><h2>Last Trade Price</h2></th>
+        <th><h2>Bid</h2></th>
+        <th><h2>Ask</h2></th>
+        <th><h2>Last Trade Time</h2></th>
+        <th><h2>Last Trade Date</h2></th>
       </tr>
     </thead>
     <tbody>
         <tr>
-          <td><%= @data[0].change %></td>
-          <td><%= @data[0].change_and_percent_change %></td>   
+          <td><%= @data[0].change %></td>  
           <td><%= @data[0].change_in_percent %></td>
           <td><%= @data[0].close %></td>
           <td><%= @data[0].last_trade_price %></td>
-          <td><%= @data[0].last_trade_time %></td>
-          <td><%= @data[0].ask %></td>
           <td><%= @data[0].bid %></td>
+          <td><%= @data[0].ask %></td>
+          <td><%= @data[0].last_trade_time %></td>
           <td><%= @data[0].last_trade_date %></td>
         </tr>
     </tbody>
+    <thead>
+      <tr>
+        <th><h2>Price Per Sales</h2></th>
+        <th><h2>Earnings Per Share</h2></th>
+        <th><h2>Open</h2></th>
+        <th><h2>Stock Exchange</h2></th>
+        <th><h2>Bid Size</h2></th>
+        <th><h2>Ask Size</h2></th>
+        <th><h2>Average Daily Volume</h2></th>
+        <th><h2>Dividend Pay Date</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @data[0].price_per_sales %></td>  
+          <td><%= @data[0].earnings_per_share %></td>
+          <td><%= @data[0].open %></td>
+          <td><%= @data[0].stock_exchange %></td>
+          <td><%= @data[0].bid_size %></td>
+          <td><%= @data[0].ask_size %></td>
+          <td><%= @data[0].average_daily_volume %></td>
+          <td><%= @data[0].dividend_pay_date %></td>
+        </tr>
+    </tbody>
   </table>
+
+<div id="container_chart" style="width:100%; height:400px;"></div>
+
+
 </div>
 <div class="container">
-  <h1 style="padding-top: 2.3em; font-size: 3.4em;"><%= @data[1].name %></h1>
+  <h1 style="padding-top: 2.3em; padding-bottom: 0.4em; font-size: 3.4em;"><%= @spinoff.spinoff_name %></h1>
 </div>
 <div class="bg_dark">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><h3>Change</h3></th>
-        <th><h3>Change &amp; Percent Change</h3></th>
-        <th><h3>Change In Percent</h3></th>
-        <th><h3>Close</h3></th>
-        <th><h3>Last Trade Price</h3></th>
-        <th><h3>Last Trade Time</h3></th>
-        <th><h3>Ask</h3></th>
-        <th><h3>Bid</h3></th>
-        <th><h3>Last Trade Date</h3></th>        
+        <th><h2>Change</h2></th>
+        <th><h2>Change In Percent</h2></th>
+        <th><h2>Close</h2></th>
+        <th><h2>Last Trade Price</h2></th>
+        <th><h2>Bid</h2></th>
+        <th><h2>Ask</h2></th>
+        <th><h2>Last Trade Time</h2></th>
+        <th><h2>Last Trade Date</h2></th>        
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= @data[1].change %></td>
-        <td><%= @data[1].change_and_percent_change %></td>   
+        <td><%= @data[1].change %></td>  
         <td><%= @data[1].change_in_percent %></td>
         <td><%= @data[1].close %></td>
         <td><%= @data[1].last_trade_price %></td>
-        <td><%= @data[1].last_trade_time %></td>
-        <td><%= @data[1].ask %></td>
         <td><%= @data[1].bid %></td>
+        <td><%= @data[1].ask %></td>
+        <td><%= @data[1].last_trade_time %></td>
         <td><%= @data[1].last_trade_date %></td>        
       </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th><h2>Price Per Sales</h2></th>
+        <th><h2>Earnings Per Share</h2></th>
+        <th><h2>Open</h2></th>
+        <th><h2>Stock Exchange</h2></th>
+        <th><h2>Bid Size</h2></th>
+        <th><h2>Ask Size</h2></th>
+        <th><h2>Average Daily Volume</h2></th>
+        <th><h2>Dividend Pay Date</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @data[1].price_per_sales %></td>  
+          <td><%= @data[1].earnings_per_share %></td>
+          <td><%= @data[1].open %></td>
+          <td><%= @data[1].stock_exchange %></td>
+          <td><%= @data[1].bid_size %></td>
+          <td><%= @data[1].ask_size %></td>
+          <td><%= @data[1].average_daily_volume %></td>
+          <td><%= @data[1].dividend_pay_date %></td>
+        </tr>
     </tbody>
   </table>
 </div>
@@ -108,31 +156,69 @@
         </div>
       </div>
     </footer>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/min/toucheffects-min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/flickity.pkgd.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/retina.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/min/scripts-min.js"></script>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<% javascript_tag 'charts.js' %>
+
 <script>
-  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  e.src='//www.google-analytics.com/analytics.js';
-  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','UA-XXXXX-X');ga('send','pageview');
+$(function () {
+    $('#container_chart').highcharts({
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: '<%= @data[0].symbol %>'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+        },
+        xAxis: {
+            type: 'datetime',
+            minRange: 14 * 24 * 3600000 // fourteen days
+        },
+        yAxis: {
+            title: {
+                text: 'Price'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                    stops: [
+                        [0, Highcharts.getOptions().colors[1]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[4]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
+
+        series: [{
+            type: 'area',
+            name: '<%= @data[0].symbol %>',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2010, 0, 1),
+            data: <%= @data_history.collect { |c| c.close.to_f }.reverse %>
+        }]
+    });
+});
 </script>
-<!-- <div id="container" style="height: 400px; min-width: 600px"></div>  
 
 
-<script src="http://code.highcharts.com/stock/highstock.js"></script>  
-<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>  
-<script type="text/javascript" src="http://www.highcharts.com/samples/data/three-series-1000-points.js"></script>​  
 
-<script src="../Rails_projects/spinoffnewsletter/app/assets/javascripts/charts.js"></script> -->
+
+
+
+

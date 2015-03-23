@@ -472,3 +472,9 @@ h1.text_two {
   background-color: #aaa;
   padding: 50px;
 }
+td > a {
+  color: steelblue;
+}
+td > a:hover {
+  color: cyan;
+}
