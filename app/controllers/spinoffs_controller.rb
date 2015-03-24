@@ -98,13 +98,6 @@ class SpinoffsController < ApplicationController
                                                                                      :volume,
                                                                                      :weeks_range_52 ], { raw: false } )
   end
-  
-  def admin
-  
-  end
-  
-  
-
 end
 
 

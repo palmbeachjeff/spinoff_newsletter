@@ -205,7 +205,7 @@ $(function () {
             zoomType: 'x'
         },
         title: {
-            text: '<%= @data[0].symbol %>'
+            text: '<%= @spinoff.parent_ticker %>'
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
@@ -248,7 +248,7 @@ $(function () {
 
         series: [{
             type: 'area',
-            name: '<%= @data[0].symbol %>',
+            name: '<%= @spinoff.spinoff_ticker %>',
             pointInterval: 24 * 3600 * 1000,
             pointStart: Date.UTC(2010, 0, 1),
             data: <%= @data_history_p.collect { |c| c.close.to_f }.reverse %>
