@@ -103,7 +103,7 @@ class SpinoffsController < ApplicationController
   
   end
   
-
+  
 
 end
 
