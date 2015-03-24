@@ -37,117 +37,154 @@
   <h1 style="padding-top: 2.3em; padding-bottom: 0.4em; font-size: 3.4em;"><%= @spinoff.parent_name %></h1>
 </div>
 <div class="bg_dark">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><h2>Change</h2></th>
-        <th><h2>Change In Percent</h2></th>
-        <th><h2>Close</h2></th>
-        <th><h2>Last Trade Price</h2></th>
-        <th><h2>Bid</h2></th>
-        <th><h2>Ask</h2></th>
-        <th><h2>Last Trade Time</h2></th>
-        <th><h2>Last Trade Date</h2></th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="row">
+  <div class="col-md-8">
+    <div id="container_parent" style="width:100%; height:400px;"></div>
+  </div>
+  <div class="col-md-4">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td><%= @data[0].change %></td>  
-          <td><%= @data[0].change_in_percent %></td>
-          <td><%= @data[0].close %></td>
-          <td><%= @data[0].last_trade_price %></td>
+          <th><h2>Change</h2></th>
+          <th><h2>Change In Percent</h2></th>
+          <th><h2>Close</h2></th>
+          <th><h2>Last Trade Price</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @data[0].change %></td>  
+            <td><%= @data[0].change_in_percent %></td>
+            <td><%= @data[0].close %></td>
+            <td><%= @data[0].last_trade_price %></td>
+          </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th><h2>Bid</h2></th>
+          <th><h2>Ask</h2></th>
+          <th><h2>Last Trade Time</h2></th>
+          <th><h2>Last Trade Date</h2></th>
+        </tr>
+      </thead>
+      <tbody>
           <td><%= @data[0].bid %></td>
           <td><%= @data[0].ask %></td>
           <td><%= @data[0].last_trade_time %></td>
           <td><%= @data[0].last_trade_date %></td>
+      </tbody>
+      <thead>
+        <tr>
+          <th><h2>Price Per Sales</h2></th>
+          <th><h2>Earnings Per Share</h2></th>
+          <th><h2>Open</h2></th>
+          <th><h2>Stock Exchange</h2></th>
         </tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th><h2>Price Per Sales</h2></th>
-        <th><h2>Earnings Per Share</h2></th>
-        <th><h2>Open</h2></th>
-        <th><h2>Stock Exchange</h2></th>
-        <th><h2>Bid Size</h2></th>
-        <th><h2>Ask Size</h2></th>
-        <th><h2>Average Daily Volume</h2></th>
-        <th><h2>Dividend Pay Date</h2></th>
-      </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr>
           <td><%= @data[0].price_per_sales %></td>  
           <td><%= @data[0].earnings_per_share %></td>
           <td><%= @data[0].open %></td>
           <td><%= @data[0].stock_exchange %></td>
-          <td><%= @data[0].bid_size %></td>
-          <td><%= @data[0].ask_size %></td>
-          <td><%= @data[0].average_daily_volume %></td>
-          <td><%= @data[0].dividend_pay_date %></td>
         </tr>
-    </tbody>
-  </table>
-
-<div id="container_parent" style="width:100%; height:400px;"></div>
-
+      </tbody>
+        <thead>
+          <tr>
+            <th><h2>Bid Size</h2></th>
+            <th><h2>Ask Size</h2></th>
+            <th><h2>Average Daily Volume</h2></th>
+            <th><h2>Dividend Pay Date</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @data[0].bid_size %></td>
+            <td><%= @data[0].ask_size %></td>
+            <td><%= @data[0].average_daily_volume %></td>
+            <td><%= @data[0].dividend_pay_date %></td>
+          </tr>
+        </tbody>
+    </table>    
+  </div>
+</div>
 
 </div>
 <div class="container">
   <h1 style="padding-top: 2.3em; padding-bottom: 0.4em; font-size: 3.4em;"><%= @spinoff.spinoff_name %></h1>
 </div>
 <div class="bg_dark">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><h2>Change</h2></th>
-        <th><h2>Change In Percent</h2></th>
-        <th><h2>Close</h2></th>
-        <th><h2>Last Trade Price</h2></th>
-        <th><h2>Bid</h2></th>
-        <th><h2>Ask</h2></th>
-        <th><h2>Last Trade Time</h2></th>
-        <th><h2>Last Trade Date</h2></th>        
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @data[1].change %></td>  
-        <td><%= @data[1].change_in_percent %></td>
-        <td><%= @data[1].close %></td>
-        <td><%= @data[1].last_trade_price %></td>
-        <td><%= @data[1].bid %></td>
-        <td><%= @data[1].ask %></td>
-        <td><%= @data[1].last_trade_time %></td>
-        <td><%= @data[1].last_trade_date %></td>        
-      </tr>
-    </tbody>
-    <thead>
-      <tr>
-        <th><h2>Price Per Sales</h2></th>
-        <th><h2>Earnings Per Share</h2></th>
-        <th><h2>Open</h2></th>
-        <th><h2>Stock Exchange</h2></th>
-        <th><h2>Bid Size</h2></th>
-        <th><h2>Ask Size</h2></th>
-        <th><h2>Average Daily Volume</h2></th>
-        <th><h2>Dividend Pay Date</h2></th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="row">
+  <div class="col-md-8">
+    <div id="container_spinoff" style="width:100%; height:400px;"></div>
+  </div>
+  <div class="col-md-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><h2>Change</h2></th>
+          <th><h2>Change In Percent</h2></th>
+          <th><h2>Close</h2></th>
+          <th><h2>Last Trade Price</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td><%= @data[1].change %></td>  
+            <td><%= @data[1].change_in_percent %></td>
+            <td><%= @data[1].close %></td>
+            <td><%= @data[1].last_trade_price %></td>
+          </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th><h2>Bid</h2></th>
+          <th><h2>Ask</h2></th>
+          <th><h2>Last Trade Time</h2></th>
+          <th><h2>Last Trade Date</h2></th>
+        </tr>
+      </thead>
+      <tbody>
+          <td><%= @data[1].bid %></td>
+          <td><%= @data[1].ask %></td>
+          <td><%= @data[1].last_trade_time %></td>
+          <td><%= @data[1].last_trade_date %></td>
+      </tbody>
+      <thead>
+        <tr>
+          <th><h2>Price Per Sales</h2></th>
+          <th><h2>Earnings Per Share</h2></th>
+          <th><h2>Open</h2></th>
+          <th><h2>Stock Exchange</h2></th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td><%= @data[1].price_per_sales %></td>  
           <td><%= @data[1].earnings_per_share %></td>
           <td><%= @data[1].open %></td>
           <td><%= @data[1].stock_exchange %></td>
-          <td><%= @data[1].bid_size %></td>
-          <td><%= @data[1].ask_size %></td>
-          <td><%= @data[1].average_daily_volume %></td>
-          <td><%= @data[1].dividend_pay_date %></td>
         </tr>
-    </tbody>
-  </table>
-
-<div id="container_spinoff" style="width:100%; height:400px;"></div>
+      </tbody>
+        <thead>
+          <tr>
+            <th><h2>Bid Size</h2></th>
+            <th><h2>Ask Size</h2></th>
+            <th><h2>Average Daily Volume</h2></th>
+            <th><h2>Dividend Pay Date</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @data[1].bid_size %></td>
+            <td><%= @data[1].ask_size %></td>
+            <td><%= @data[1].average_daily_volume %></td>
+            <td><%= @data[1].dividend_pay_date %></td>
+          </tr>
+        </tbody>
+    </table>    
+  </div>
+</div>
 
 </div>
 
@@ -168,7 +205,7 @@ $(function () {
             zoomType: 'x'
         },
         title: {
-            text: '<%= @data[0].symbol %>'
+            text: '<%= @spinoff.parent_ticker %>'
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
@@ -211,7 +248,7 @@ $(function () {
 
         series: [{
             type: 'area',
-            name: '<%= @data[0].symbol %>',
+            name: '<%= @spinoff.spinoff_ticker %>',
             pointInterval: 24 * 3600 * 1000,
             pointStart: Date.UTC(2010, 0, 1),
             data: <%= @data_history_p.collect { |c| c.close.to_f }.reverse %>
@@ -247,8 +284,8 @@ $('#container_spinoff').highcharts({
                 fillColor: {
                     linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
                     stops: [
-                        [0, Highcharts.getOptions().colors[0]],
-                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        [0, Highcharts.getOptions().colors[2]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0).get('rgba')]
                     ]
                 },
                 marker: {
