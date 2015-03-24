@@ -1,5 +1,5 @@
 $(function(){
-  $('#spinoffs').on('click', '.pagination > a', function(){
+  $('#spinoffs').on('click', '.container ul li > a', function(){
     $.get(this.href, null, null, "script");
     return false;
   });

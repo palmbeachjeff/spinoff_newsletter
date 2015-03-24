@@ -88,7 +88,7 @@
     </tbody>
   </table>
 
-<div id="container_chart" style="width:100%; height:400px;"></div>
+<div id="container_parent" style="width:100%; height:400px;"></div>
 
 
 </div>
@@ -146,12 +146,15 @@
         </tr>
     </tbody>
   </table>
+
+<div id="container_spinoff" style="width:100%; height:400px;"></div>
+
 </div>
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <p>© Spinoff News Letter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
+            <p>© Spinoff Newsletter - Designed &amp; Developed by<br> <a href="http://www.ajeanwebdev.com/">Ajean Web Dev</a> &amp; <a href="https://github.com/palmbeachjeff">Palm Beach Jeff</a></p>
           </div>
         </div>
       </div>
@@ -159,7 +162,7 @@
 
 <script>
 $(function () {
-    $('#container_chart').highcharts({
+    $('#container_parent').highcharts({
         chart: {
             zoomType: 'x'
         },
@@ -210,7 +213,62 @@ $(function () {
             name: '<%= @data[0].symbol %>',
             pointInterval: 24 * 3600 * 1000,
             pointStart: Date.UTC(2010, 0, 1),
-            data: <%= @data_history.collect { |c| c.close.to_f }.reverse %>
+            data: <%= @data_history_p.collect { |c| c.close.to_f }.reverse %>
+        }]
+    });
+
+$('#container_spinoff').highcharts({
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: '<%= @data[1].symbol %>'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+        },
+        xAxis: {
+            type: 'datetime',
+            minRange: 14 * 24 * 3600000 // fourteen days
+        },
+        yAxis: {
+            title: {
+                text: 'Price'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
+
+        series: [{
+            type: 'area',
+            name: '<%= @data[1].symbol %>',
+            pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2010, 0, 1),
+            data: <%= @data_history_s.collect { |c| c.close.to_f }.reverse %>
         }]
     });
 });

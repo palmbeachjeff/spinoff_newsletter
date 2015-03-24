@@ -9,7 +9,8 @@ class SpinoffsController < ApplicationController
 
   def show
     @spinoff = Spinoff.find(params[:id])
-    @data_history = YahooFinance.historical_quotes(@spinoff.parent_ticker, { start_date: Time::now - (60*60*24*2770), end_date: Time::now })
+    @data_history_p = YahooFinance.historical_quotes(@spinoff.parent_ticker, { start_date: Time::now - (60*60*24*2770), end_date: Time::now })
+    @data_history_s = YahooFinance.historical_quotes(@spinoff.spinoff_ticker, { start_date: Time::now - (60*60*24*2770), end_date: Time::now })
     @data = YahooFinance.quotes([@spinoff.parent_ticker, @spinoff.spinoff_ticker], [ :after_hours_change_real_time,
                                                                                      :annualized_gain, 
                                                                                      :ask,

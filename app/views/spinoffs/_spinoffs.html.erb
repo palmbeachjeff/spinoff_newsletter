@@ -1,4 +1,6 @@
-<%= will_paginate @spinoffs %>
+<div class="container">
+  <%= will_paginate @spinoffs, renderer: BootstrapPagination::Rails %>
+</div>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -21,4 +23,7 @@
       <% end %>
     </tbody>
   </table>
-<%= will_paginate @spinoffs %>
+<div class="container">
+  <%= will_paginate @spinoffs, renderer: BootstrapPagination::Rails %>
+</div>
+
